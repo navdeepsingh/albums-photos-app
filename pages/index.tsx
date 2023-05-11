@@ -6,11 +6,10 @@ import { UserData } from "types";
 import { getItemFromLocalStorage } from "utils/getItemFromLocalStorage";
 import Albums from "@/components/features/albums/albums";
 import useLoadUsers from "hooks/useLoadUsers";
+import Wrapper from "@/components/features/wrapper/wrapper";
 
 export default function Home() {
-  useLoadUsers();
-  const users = getItemFromLocalStorage("users");
-  const selectedUser = users && (users[0] as UserData);
+  const selectedUser = useLoadUsers();
 
   return (
     <div className={styles.container}>
@@ -19,20 +18,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        <h1 className={styles.title}>Albums & Photos App</h1>
+      <Wrapper>
         <Albums user={selectedUser} />
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://nsblog.hashnode.dev/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Developed by Navdeep Singh
-        </a>
-      </footer>
+      </Wrapper>
     </div>
   );
 }

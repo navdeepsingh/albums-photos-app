@@ -17,6 +17,12 @@ const useLoadUsers = () => {
     fetchUsers();
     // On Unmounting locastorage data can be removed
   }, []);
+
+  const users = getItemFromLocalStorage("users");
+  // change index to change user
+  const selectedUser = users && (users[4] as UserData);
+
+  return selectedUser;
 };
 
 export default useLoadUsers;

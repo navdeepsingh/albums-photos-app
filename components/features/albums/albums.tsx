@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { AlbumsData, UserData } from "types";
 import { getData } from "utils/getData";
 import styles from "./albums.module.css";
+import AlbumCard from "@/components/reusable/albumCard/albumCard";
 
 type AlbumsType = {
   user: UserData;
@@ -25,15 +26,8 @@ const Albums: React.FC<AlbumsType> = ({ user = {} }) => {
   return (
     <div className={styles.grid}>
       {albums.length
-        ? albums.map((album) => (
-            <a
-              key={album.id}
-              href="https://nextjs.org/docs"
-              className={styles.card}
-            >
-              <h3>Album {album.id} &rarr;</h3>
-              <p>{album.title}</p>
-            </a>
+        ? albums.map((album: AlbumsData) => (
+            <AlbumCard albumId={album.id} albumTitle={album.title} />
           ))
         : "Albums not rendered yet, wait for it..."}
     </div>
