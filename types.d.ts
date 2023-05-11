@@ -28,3 +28,19 @@ export type UserData = {
     bs: string;
   };
 };
+
+type AlbumIdType = number;
+
+export type AlbumsData = {
+  userId: number;
+  id: AlbumIdType;
+  title: string;
+};
+
+export type PhotosData = {
+  albumId: AlbumIdType;
+  id: number;
+  title: string;
+  url: string;
+  thumbnailUrl: string;
+};
