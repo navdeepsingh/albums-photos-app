@@ -1,6 +1,6 @@
 import React from "react";
 import { AlbumIdType, AlbumsData } from "types";
-import styles from "./albumCard.module.css";
+import styles from "./AlbumCard.module.css";
 import { useRouter } from "next/router";
 
 interface IAlbumCard {

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React, { useState } from "react";
-import styles from "./photoCard.module.css";
+import styles from "./PhotoCard.module.css";
 import Modal from "../Modal/Modal";
 
 interface PhotoCard {
