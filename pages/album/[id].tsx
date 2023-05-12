@@ -2,7 +2,6 @@ import React from "react";
 import Wrapper from "@/components/features/Wrapper/Wrapper";
 import PhotoCard from "@/components/reusable/PhotoCard/PhotoCard";
 import { useRouter } from "next/router";
-
 import styles from "./[id].module.css";
 import useLoadPhotos from "hooks/useLoadPhotos";
 
