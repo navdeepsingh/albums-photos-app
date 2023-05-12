@@ -9,11 +9,11 @@ type AlbumsType = {
   user: UserData;
 };
 
-const AlbumsList: React.FC<AlbumsType> = ({ user = {} }) => {
+const AlbumsList: React.FC<AlbumsType> = ({ user }) => {
   const [albums, setAlbums] = useState<AlbumsData[]>([]);
 
   useEffect(() => {
-    if (!user) return;
+    if (user === undefined) return;
 
     async function fetchAlbums() {
       const albums = await getDataFromApi<AlbumsData>(constants.ALBUMS_API);
