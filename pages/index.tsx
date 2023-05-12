@@ -1,12 +1,11 @@
 import Head from "next/head";
-import Image from "next/image";
 
 import styles from "@/pages/index.module.css";
-import { UserData } from "types";
-import { getItemFromLocalStorage } from "utils/getItemFromLocalStorage";
-import Albums from "@/components/features/albums/albums";
-import useLoadUsers from "hooks/useLoadUsers";
-import Wrapper from "@/components/features/wrapper/wrapper";
+
+import useLoadUsers from "../hooks/useLoadUsers";
+
+import AlbumsList from "@/components/features/AlbumsList/AlbumsList";
+import Wrapper from "@/components/features/Wrapper/Wrapper";
 
 export default function Home() {
   const selectedUser = useLoadUsers();
@@ -19,7 +18,7 @@ export default function Home() {
       </Head>
 
       <Wrapper>
-        <Albums user={selectedUser} />
+        <AlbumsList user={selectedUser} />
       </Wrapper>
     </div>
   );

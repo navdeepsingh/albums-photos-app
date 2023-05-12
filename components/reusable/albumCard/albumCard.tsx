@@ -1,7 +1,7 @@
 import React from "react";
 import { AlbumIdType, AlbumsData } from "types";
 import styles from "./albumCard.module.css";
-import Link from "next/link";
+import { useRouter } from "next/router";
 
 interface IAlbumCard {
   albumId: AlbumIdType;
@@ -12,11 +12,18 @@ const AlbumCard: React.FC<IAlbumCard> = ({
   albumId,
   albumTitle,
 }): React.ReactElement => {
+  const router = useRouter();
+
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    router.push(`album/${albumId}`);
+  };
+
   return (
-    <Link key={albumId} href={`/album/${albumId}`} className={styles.card}>
+    <button key={albumId} className={styles.card} onClick={handleClick}>
       <h3>Album {albumId} &rarr;</h3>
       <p>{albumTitle}</p>
-    </Link>
+    </button>
   );
 };
 

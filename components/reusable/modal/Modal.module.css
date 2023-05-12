@@ -1,0 +1,47 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: rgba(51, 51, 51, 0.3);
+  backdrop-filter: blur(1px);
+  opacity: 1;
+
+  transition: all 100ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 200ms;
+}
+
+.modalContent {
+  /* Mobile First Approach */
+  width: auto;
+  height: auto;
+
+  margin: 0 10px;
+  padding: 10px;
+
+  border-radius: 10px;
+
+  transform: translateY(100px);
+  transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 1;
+  background-color: white;
+}
+
+@media (min-width: 400px) {
+  .modalContent {
+    min-width: 400px;
+    min-height: 400px;
+    max-width: 600px;
+  }
+}
+
+.modalContent img {
+  width: 100%;
+  height: 100%;
+}

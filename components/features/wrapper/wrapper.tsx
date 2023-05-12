@@ -1,5 +1,6 @@
 import React, { ReactNode } from "react";
 import styles from "./wrapper.module.css";
+import Link from "next/link";
 
 type WrapperProps = {
   children?: ReactNode;
@@ -9,7 +10,9 @@ const Wrapper: React.FC<WrapperProps> = ({ children }) => {
   return (
     <>
       <main>
-        <h1 className={styles.title}>Albums & Photos App</h1>
+        <h1 className={styles.title}>
+          <Link href="/">Albums & Photos App</Link>
+        </h1>
         {children}
       </main>
 
